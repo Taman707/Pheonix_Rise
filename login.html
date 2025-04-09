@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In - Phoenix Rise</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #e0f7fa, #f1f8ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .login-box {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      max-width: 450px;
+      width: 100%;
+    }
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #0077b6;
+    }
+    .form-label {
+      font-weight: 500;
+    }
+    .form-control {
+      border-radius: 10px;
+    }
+    .btn-login {
+      background-color: #d0ebff;
+      color: #00334e;
+      border: none;
+      border-radius: 10px;
+      width: 100%;
+      padding: 12px;
+      transition: background-color 0.3s ease;
+    }
+    .btn-login:hover {
+      background-color: #a8d6f1;
+    }
+    .info-text {
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h2>Log In to Phoenix Rise</h2>
+    <form id="loginForm" onsubmit="return validateLogin()">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" required>
+      </div>
+      <button type="submit" class="btn-login">Log In</button>
+    </form>
+    <p class="info-text">Don't have an account? <a href="signup.html">Sign up</a></p>
+  </div>
+
+  <script>
+    function validateLogin() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username.trim() === "" || password.trim() === "") {
+        alert("Please fill in both fields.");
+        return false;
+      }
+
+      // Simulate login (in real case, replace with actual authentication logic)
+      alert("Login successful! Redirecting to your dashboard...");
+      window.location.href = 'home.html';
+      return false;
+    }
+  </script>
+
+</body>
+</html>
